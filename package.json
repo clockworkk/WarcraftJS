@@ -1,0 +1,11 @@
+{
+	"name":"warcraft-node-client",
+	"description":"World of Warcraft community API JS Client",
+	"version":"0.0.1",
+	"directories":{ "lib" : "./lib" },
+	"dependencies":{
+		"qs":"*",
+		"oath":"*",
+		"passport-bnet":"1.1.1"
+	}
+}
