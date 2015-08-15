@@ -1,9 +1,0 @@
-{
-	"consumerKey" : "nbyvv3qhtdatpe3tqncnb49vvgvg7day",
-	"consumerSecret": "BM2y7z8zSNjFyZXtWjtyDsuV8mUFavZ3",
-	"accessToken": "{accessToken}",
-	"accessTokenSecret": "{accessTokenSecret}",
-	"callBackUrl": "{callBackUrl}",
-	"locale": "un_US",
-	"region": "us"
-}
