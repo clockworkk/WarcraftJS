@@ -80,6 +80,7 @@ describe("Warcraft", function() {
 		warcraft.getBattlePetStats(params, error,
 			function (data) {
 				expect(JSON.parse(data)['speciesId']).toEqual(params.id);
+				done();
 			}
 		);
 	});
@@ -99,6 +100,7 @@ describe("Warcraft", function() {
 				expect(JSON.parse(data)['level']).toEqual(params.level);
 				expect(JSON.parse(data)['breedId']).toEqual(params.breedId);
 				expect(JSON.parse(data)['qualityId']).toEqual(params.qualityId);
+				done();
 			}
 		);
 	});
@@ -112,6 +114,7 @@ describe("Warcraft", function() {
 		warcraft.getChallengeModeData(params, error,
 			function (data) {
 				expect(JSON.parse(data)['challengeMode'][0]['realm']).toEqual(params.id);
+				done();
 			}
 		);
 	});
