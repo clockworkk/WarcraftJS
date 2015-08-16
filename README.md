@@ -52,15 +52,13 @@ You need to create a [Mashery/Blizzard app](https://dev.battle.net/member/regist
 
     warcraft.getRegionLeaderboardData({ locale: 'en_US' }, error, success);
 
-    warcraft.getCharacterProfile('bloodhoof', 'xcelence', error, sucess);
+    warcraft.getCharacterProfileData('bloodhoof', 'xcelence', error, sucess);
 
     warcraft.getCharacterAchievementData('bloodhoof', 'xcelence', error, sucess);
 
     warcraft.getCharacterAppearanceData('bloodhoof', 'xcelence', error, sucess);
 
     warcraft.getCharacterActivityData('bloodhoof', 'xcelence', error, sucess);
-
-    warcraft.getCharacterProfile('bloodhoof', 'xcelence', error, sucess);
 
     warcraft.getCharacterGuildData('bloodhoof', 'xcelence', error, sucess);
 
