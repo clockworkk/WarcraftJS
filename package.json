@@ -6,8 +6,6 @@
 	"dependencies":{
 		"qs":"*",
 		"oath":"*",
-		"passport-bnet":"1.1.1",
-		"passport-oauth2":"*",
 		"jasmine-node":"*",
 		"request-promise":"*"
 	}
