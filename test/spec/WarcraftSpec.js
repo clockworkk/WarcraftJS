@@ -9,6 +9,11 @@ describe("Warcraft", function() {
 		done();
 	};
 
+	var success = function (data) {
+		console.log('Data [%s]', data);
+		done();
+  };
+
 	beforeEach(function(done) {
 		config = JSON.parse(fs.readFileSync('./test/spec/config.json', encoding="ascii"));
 		warcraft = new Warcraft(config);
@@ -18,7 +23,7 @@ describe("Warcraft", function() {
 
 	it('should get individual achievement data', function (done) {
 		var params = {
-			id: '2144',
+			id: 2144,
 			locale: 'en_US'
 		};
 		warcraft.getAchievementData(params, error,
@@ -37,7 +42,7 @@ describe("Warcraft", function() {
 		};
 		warcraft.getAuctionHouseData(params, error,
 			function (data) {
-				expect(JSON.parse(data)['files'][0]['url'].not.toBeUnefined());
+				expect(JSON.parse(data)['files'][0]['url'].toBeDefined());
 				done();
 			}
 		);
@@ -46,7 +51,7 @@ describe("Warcraft", function() {
 
 	it('should get battle pet ability data', function (done) {
 		var params = {
-			id: '640',
+			id: 640,
 			locale: 'en_US'
 		};
 		warcraft.getBattlePetAbility(params, error,
@@ -60,7 +65,7 @@ describe("Warcraft", function() {
 
 	it('should get battle pet species data', function (done) {
 		var params = {
-			id: '258',
+			id: 258,
 			locale: 'en_US'
 		};
 		warcraft.getBattlePetSpecies(params, error,
@@ -74,7 +79,7 @@ describe("Warcraft", function() {
 
 	it('should get detailed information about a given species of pet', function (done) {
 		var params = {
-			id: '258',
+			id: 258,
 			locale: 'en_US'
 		};
 		warcraft.getBattlePetStats(params, error,
@@ -88,10 +93,10 @@ describe("Warcraft", function() {
 
 	it('should get detailed information about a given species of pet given optional parameters', function (done) {
 		var params = {
-			id: '258',
-			level: '25',
-			breedId: '5',
-			qualityId: '5',
+			id: 258,
+			level: 25,
+			breedId: 5,
+			qualityId: 5,
 			locale: 'en_US'
 		};
 		warcraft.getBattlePetStats(params, error,
@@ -99,7 +104,7 @@ describe("Warcraft", function() {
 				expect(JSON.parse(data)['speciesId']).toEqual(params.id);
 				expect(JSON.parse(data)['level']).toEqual(params.level);
 				expect(JSON.parse(data)['breedId']).toEqual(params.breedId);
-				expect(JSON.parse(data)['qualityId']).toEqual(params.qualityId);
+				expect(JSON.parse(data)['petQualityId']).toEqual(params.qualityId);
 				done();
 			}
 		);
