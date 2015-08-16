@@ -9,7 +9,7 @@ npm install warcraft-node-client
 var Warcraft = require('warcraft-node-client').Warcraft;
 ```
 ## Usage
-You need to create a [Twitter app](https://dev.twitter.com/apps) to use the API.
+You need to create a [Mashery/Blizzard app](https://dev.battle.net/member/register) to use the API.
 
 ```javascript
 	//Callback functions
