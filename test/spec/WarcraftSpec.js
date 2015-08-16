@@ -15,7 +15,7 @@ describe("Warcraft", function() {
   };
 
 	beforeEach(function(done) {
-		config = JSON.parse(fs.readFileSync('./test/spec/config.json', encoding="ascii"));
+		config = JSON.parse(fs.readFileSync('./test/spec/config.json', encoding='ascii'));
 		warcraft = new Warcraft(config);
 		expect(warcraft).toBeDefined();
 		done();
@@ -40,10 +40,10 @@ describe("Warcraft", function() {
 			id: 'bloodhoof',
 			locale: 'en_US'
 		};
-		warcraft.getAuctionHouseData(params, error,
+    warcraft.getAuctionHouseData(params, error,
 			function (data) {
-				expect(JSON.parse(data)['files'][0]['url'].toBeDefined());
-				done();
+        expect(JSON.parse(data)['files'][0]['url'].toBeDefined());
+        done();
 			}
 		);
 	});
@@ -54,9 +54,9 @@ describe("Warcraft", function() {
 			id: 640,
 			locale: 'en_US'
 		};
-		warcraft.getBattlePetAbility(params, error,
+    warcraft.getBattlePetAbility(params, error,
 			function (data) {
-				expect(JSON.parse(data)['id']).toEqual(params.id);
+        expect(JSON.parse(data)['id']).toEqual(params.id);
 				done();
 			}
 		);
