@@ -1,12 +1,35 @@
 {
 	"name":"warcraft-node-client",
-	"description":"World of Warcraft community API JS Client",
+	"description":"World of Warcraft community API JS Client.",
 	"version":"0.0.1",
+	"author": "Phil Middleton <middleton.philip.pm@gmail.com>"
 	"directories":{ "lib" : "./lib" },
+	"license": "MIT",
+	"keywords": [
+		"app",
+		"api",
+		"restful",
+		"wow",
+		"warcraft",
+		"world of warcraft",
+		"blizzard",
+		"community"
+	],
 	"dependencies":{
 		"qs":"*",
 		"oath":"*",
-		"jasmine-node":"*",
 		"request-promise":"*"
+	},
+	"devDependencies": {
+		"jasmine-node":"*",
+	},
+	"files": [
+		"LICENSE",
+		"README.md",
+		"index.js",
+		"lib/"
+	],
+	"scripts": {
+		"test": "jasmine-node test/spec/"
 	}
 }
