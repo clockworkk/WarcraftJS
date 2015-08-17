@@ -4,6 +4,8 @@ A Node Module to authenticate and interact with the World of Warcraft community 
 ## Installation
 ```
 npm install warcraft-node-client
+
+npm test
 ```
 ```javascript
 var Warcraft = require('warcraft-node-client').Warcraft;
@@ -120,4 +122,4 @@ These will need to be updated with your own details before the tests will run
 
 ## Running tests
 
-	make test
+	npm test
