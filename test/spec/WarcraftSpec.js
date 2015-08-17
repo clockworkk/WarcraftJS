@@ -1,6 +1,8 @@
 var Warcraft = require('../../lib/warcraft').Warcraft;
 var fs = require('fs');
 
+jasmine.getEnv().defaultTimeoutInterval = 30000;
+
 describe("Warcraft", function() {
 	var warcraft;
 	var config;
@@ -42,7 +44,8 @@ describe("Warcraft", function() {
 		};
     warcraft.getAuctionHouseData(params, error,
 			function (data) {
-        expect(JSON.parse(data)['files'][0]['url'].toBeDefined());
+        res = JSON.parse(data)['files'][0]['url'];
+        expect(typeof res).toEqual('string');
         done();
 			}
 		);
@@ -553,7 +556,7 @@ describe("Warcraft", function() {
     };
     warcraft.getQuestData(params.questId, params.locale, error,
       function (data) {
-        expect(JSON.parase(data)['id']).toEqual(params.questId);
+        expect(JSON.parse(data)['id']).toEqual(params.questId);
       }
     );
   });
