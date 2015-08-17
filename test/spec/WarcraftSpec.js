@@ -517,8 +517,60 @@ describe("Warcraft", function() {
         done();
       }
     );
-  })
+  });
 
+
+  it('should get detailed information about a specific item', function (done) {
+    var params = {
+      itemId: 18803,
+      locale: 'en_US'
+    };
+    warcraft.getItemData(params.itemId, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['id']).toEqual(params.itemId);
+        done();
+      }
+    );
+  });
+
+  it('should get detailed information about an individual item set', function (done) {
+    var params = {
+      itemId: 1060,
+      locale: 'en_us'
+    };
+    warcraft.getItemSetData(params.itemId, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['id']).toEqual(params.itemId);
+        done();
+      }
+    );
+  });
+
+  it('should get detailed information about a specific quest', function (done) {
+    var params = {
+      questId: 13146,
+      locale: 'en_US'
+    };
+    warcraft.getQuestData(params.questId, params.locale, error,
+      function (data) {
+        expect(JSON.parase(data)['id']).toEqual(params.questId);
+      }
+    );
+  });
+
+  // Get realm status
+  // Get recipe data
+  // Get spell data
+  // get battlegroups data
+  // Get character races data
+  // get character classes data
+  // get character achievements data
+  // get Guild rewards data
+  // get guild perks data
+  // get guild achievements data
+  // get item classes data
+  // get talent data
+  // get pet types data
 
 
 
