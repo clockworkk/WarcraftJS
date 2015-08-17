@@ -426,5 +426,100 @@ describe("Warcraft", function() {
   });
 
 
+  it('should get detailed information about a specific guild\'s data', function (done) {
+    var params = {
+      realm: 'bloodhoof',
+      guild: 'dark pact',
+      locale: 'en_US',
+    };
+    warcraft.getGuildProfileData(params.realm, params.guild, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['name'].toLowerCase()).toEqual(params.guild);
+        expect(JSON.parse(data)['realm'].toLowerCase()).toEqual(params.realm);
+        done();
+      }
+    );
+  });
+
+
+  it('should get detailed information about a specific guild\'s member data', function (done) {
+    var params = {
+      realm: 'bloodhoof',
+      guild: 'dark pact',
+      locale: 'en_US',
+    };
+    warcraft.getGuildMembersData(params.realm, params.guild, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['name'].toLowerCase()).toEqual(params.guild);
+        expect(JSON.parse(data)['realm'].toLowerCase()).toEqual(params.realm);
+        done();
+      }
+    );
+  });
+
+
+  it('should get detailed information about a specific guild\'s achievement data', function (done) {
+    var params = {
+      realm: 'bloodhoof',
+      guild: 'dark pact',
+      locale: 'en_US',
+    };
+    warcraft.getGuildAchievementData(params.realm, params.guild, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['name'].toLowerCase()).toEqual(params.guild);
+        expect(JSON.parse(data)['realm'].toLowerCase()).toEqual(params.realm);
+        done();
+      }
+    );
+  });
+
+
+  it('should get detailed information about a specific guild\'s news data', function (done) {
+    var params = {
+      realm: 'bloodhoof',
+      guild: 'dark pact',
+      locale: 'en_US',
+    };
+    warcraft.getGuildNewsData(params.realm, params.guild, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['name'].toLowerCase()).toEqual(params.guild);
+        expect(JSON.parse(data)['realm'].toLowerCase()).toEqual(params.realm);
+        done();
+      }
+    );
+  });
+
+
+  it('should get detailed information about a specific guild\'s challenge mode data', function (done) {
+    var params = {
+      realm: 'bloodhoof',
+      guild: 'dark pact',
+      locale: 'en_US',
+    };
+    warcraft.getGuildChallengeModeData(params.realm, params.guild, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['name'].toLowerCase()).toEqual(params.guild);
+        expect(JSON.parse(data)['realm'].toLowerCase()).toEqual(params.realm);
+        done();
+      }
+    );
+  });
+
+
+  it('should get detailed information about pvp data for a given bracket', function (done) {
+    var params = {
+      bracket: '2v2',
+      locale: 'en_US'
+    };
+    warcraft.getPVPData(params.bracket, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['rows'][0]['ranking']).toEqual(1);
+        done();
+      }
+    );
+  })
+
+
+
 
 });

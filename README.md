@@ -102,8 +102,6 @@ You need to create a [Mashery/Blizzard app](https://dev.battle.net/member/regist
 
     warcraft.getGuildChallengeModeData({ 'stormrage', 'death jesters', error, success);
 
-    warcraft.getGuildProfileData({ 'stormrage', 'death jesters', error, success);
-
     warcraft.getPVPData( '2v2', { locale: 'en_US' }, error, success);
 
     warcraft.getQuestData({ id: 13146, locale: 'en_US'}, error, success);
