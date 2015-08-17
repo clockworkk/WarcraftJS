@@ -94,7 +94,7 @@ describe("Warcraft", function() {
 	});
 
 
-	it('should get detailed information about a given species of pet given optional parameters', function (done) {
+	it('should get detailed information about a given species of pet\'s stats given optional parameters', function (done) {
 		var params = {
 			id: 258,
 			level: 25,
@@ -121,7 +121,7 @@ describe("Warcraft", function() {
 		};
 		warcraft.getChallengeModeData(params, error,
 			function (data) {
-				expect(JSON.parse(data)['challengeMode'][0]['realm']).toEqual(params.id);
+				expect(JSON.parse(data)['challenge'][0]['realm']['slug']).toEqual(params.id);
 				done();
 			}
 		);
