@@ -562,10 +562,44 @@ describe("Warcraft", function() {
   });
 
   // Get realm status
-  // Get recipe data
+  it('should get detailed information about a specific profession recipe', function (done) {
+    var params = {
+      recipeId: 33994,
+      locale: 'en_US'
+    };
+    warcraft.getRecipeData(params.recipeId, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['id']).toEqual(params.recipeId);
+      }
+    );
+  });
+
   // Get spell data
+  it('should get detailed information about a specific spell', function (done) {
+    var params = {
+      spellId: 8056,
+      locale: 'en_US'
+    };
+    warcraft.getSpellData(params.spellId, params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['id']).toEqual(params.spellId);
+      }
+    );
+  });
+
   // get battlegroups data
+
   // Get character races data
+  it('should get detailed information about the character races', function (done) {
+    var params = {
+      locale: 'en_US'
+    };
+    warcraft.getCharacterRacesData(params, error,
+      function (data) {
+        expect(JSON.parse(data)['races'][0]['id']).toEqual(1);
+      }
+    );
+  });
   // get character classes data
   // get character achievements data
   // get Guild rewards data
