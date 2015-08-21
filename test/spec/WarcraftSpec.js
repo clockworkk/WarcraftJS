@@ -594,20 +594,108 @@ describe("Warcraft", function() {
     var params = {
       locale: 'en_US'
     };
-    warcraft.getCharacterRacesData(params, error,
+    warcraft.getCharacterRacesData(params.locale, error,
       function (data) {
         expect(JSON.parse(data)['races'][0]['id']).toEqual(1);
       }
     );
   });
+
   // get character classes data
+  it("should get detailed information about the different character classes", function (done) {
+    var params = {
+      locale: 'en_US'
+    };
+    warcraft.getCharacterClassesData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['classes'][0]['id']).toEqual(3);
+      }
+    );
+  });
+
   // get character achievements data
+  it("should get detailed information about all of the different achievements in the game", function (done) {
+    var params = {
+      locale: 'en_US'
+    };
+    warcraft.getAllAchivementsData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['achievements'][0]['id']).toEqual(9);
+      }
+    );
+  });
+
   // get Guild rewards data
+  it("should get detailed information about all of the different guild rewards available in the game", function (done) {
+    var params = {
+      locale: 'en_us'
+    };
+    warcraft.getGuildRewardsData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['rewards'][0]['minGuildLevel']).toEqual(0);
+      }
+    );
+  });
+
   // get guild perks data
+  it("should get detailed information about all of the different guild perks available in the game", function (done) {
+    var params = {
+      locale: 'en_us'
+    };
+    warcraft.getGuildPerksResourcesData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['perks'][0]['id']).toEqual(1);
+      }
+    );
+  });
+
   // get guild achievements data
+    it("should get detailed information about all of the different guild achievements available in the game", function (done) {
+    var params = {
+      locale: 'en_us'
+    };
+    warcraft.getGuildPerksAchievementsData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['achievements'][0]['id']).toEqual(5362);
+      }
+    );
+  });
+
   // get item classes data
+    it("should get a list of item classes", function (done) {
+    var params = {
+      locale: 'en_us'
+    };
+    warcraft.getItemClassesData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['classes'][0]['class']).toEqual(17);
+      }
+    );
+  });
+
   // get talent data
+  it("should get a list of talents, specs and glyphs for each class.", function (done) {
+    var params = {
+      locale: 'en_us'
+    };
+    warcraft.getTalentData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['1']['glyphs'][0]['glyph']).toEqual(483);
+      }
+    );
+  });
+
   // get pet types data
+  it("should get a list of the different battle pet types (including what they are strong and weak against)", function (done) {
+    var params = {
+      locale: 'en_us'
+    };
+    warcraft.getPetTypesData(params.locale, error,
+      function (data) {
+        expect(JSON.parse(data)['petTypes'][0]['id']).toEqual(0);
+      }
+    );
+  });
 
 
 
